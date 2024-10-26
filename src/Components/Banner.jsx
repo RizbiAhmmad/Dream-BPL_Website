@@ -21,9 +21,7 @@ const Banner = () => {
   </div>
 </section>
 
-
-
-        </div>
+    </div>
     );
 };
 
