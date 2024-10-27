@@ -15,11 +15,15 @@ const AllPlayers = ({handleSelectedPlayer}) => {
     },[])
 
     return (
-        <div>
-          <h1 className='font-bold'>Available Players</h1>
+        <div >
+          <h1 className='font-bold'>Available Players:{players.length} </h1>
+
+          <div className='grid grid-cols-1 md:grid-cols-3'>
           {
             players.map(player=><SinglePlayer handleSelectedPlayer={handleSelectedPlayer} key={player.playerId} player={player}/>)
         }
+          </div>
+
         </div>
         
     );

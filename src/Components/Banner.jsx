@@ -1,5 +1,8 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
-const Banner = () => {
+const Banner = ({ handleClaimFreeCredit }) => {
+  console.log(handleClaimFreeCredit)
+
     return (
         <div>
         
@@ -13,7 +16,7 @@ const Banner = () => {
       <h1 className="text-4xl font-bold">Assemble Your Ultimate Dream 11 Cricket Team</h1>
       <p className="mt-4 text-lg">Beyond Boundaries Beyond Limits</p>
       
-      <button onclick="increaseCoins()" className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-2 px-4 rounded-full border-4 border-white border-collapse">
+      <button onClick={handleClaimFreeCredit} className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-2 px-4 rounded-full border-4 border-white border-collapse">
     Claim Free Credit</button>
 
 

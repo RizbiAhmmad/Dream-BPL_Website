@@ -7,46 +7,37 @@ import { useState } from "react";
 import Footer from "./Components/Footer";
 const App = () => {
 
+  const [coins, setCoins] = useState(0);
+
   const [isActive, setIsActive] = useState({
     Card: true,
     // isCardContainerActive: false,
     status: "active"
   })
 
+  const handleClaimFreeCredit = () => {
+    setCoins(coins + 500000); 
+  };
+
+
 
   const [selctedPlayers, setSelectedPlayers] = useState([]);
 
-  const handleSelectedPlayer = (player) => {
-    // console.log(player);
-
-    const isexist = selctedPlayers.find((p) => p.id === player.playerId);
-    if(isexist){
-      // console.log("Agee theke ase");
-      alert ("R add kora jabe na")
-    }
-
-    else{
-      const newPlayers = [...selctedPlayers,player]
-      // console.log(newPlayers);
-      setSelectedPlayers(newPlayers)
-    }
-
-    // console.log(isexist);
-
-   
-  }
-  console.log(selctedPlayers);
-
-
-
-
-
-
-
-
-
-
-
+  // const handleSelectedPlayer = (player) => {
+  //   const isExist = selctedPlayers.find((p) => p.playerId === player.playerId); // Changed `find` to `some`
+    
+  //   if (isExist) {
+  //     alert("Player is already added!");
+  //   } else {
+  //     const newPlayers = [...selctedPlayers, player];
+  //     setSelectedPlayers(newPlayers);
+  //   }
+  // };
+  
+const handleSelectedPlayer = (player) => {
+  const newPlayers = [...selctedPlayers, player];
+  console.log(newPlayers);
+};
 
 
 
@@ -78,17 +69,19 @@ const App = () => {
     <div>
 
       {/* Header */}
-      <Header/>
+      <Header coins={coins}/>
 
       {/* Banner */}
 
-      <Banner/>
+      <Banner handleClaimFreeCredit={handleClaimFreeCredit}/>
 
     <div className="flex1 ">
       
-    <AllPlayers handleSelectedPlayer={handleSelectedPlayer}></AllPlayers>
+    
 
-    <CardContainer isActive={isActive} handleIsActiveState = {handleIsActiveState}></CardContainer>
+    <CardContainer handleSelectedPlayer={handleSelectedPlayer} isActive={isActive} handleIsActiveState = {handleIsActiveState}>
+
+    </CardContainer>
 
     </div>
 

@@ -1,4 +1,5 @@
-const Header = () => {
+/* eslint-disable react/prop-types */
+const Header = ({ coins}) => {
     return (
         <div>
        
@@ -15,7 +16,7 @@ const Header = () => {
       <a href="#" className="text-gray-600 hover:text-gray-900">Fixture</a>
       <a href="#" className="text-gray-600 hover:text-gray-900">Teams</a>
       <a href="#" className="text-gray-600 hover:text-gray-900">Schedules</a>
-      <button className="btn "><span>0</span>Coin <img src="https://i.ibb.co.com/2yQXdLH/coin.png" alt="" /></button>
+      <button className="btn "><span>{coins}</span>Coin <img src="https://i.ibb.co.com/2yQXdLH/coin.png" alt="" /></button>
     </div>
 
   </nav>
