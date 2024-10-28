@@ -1,0 +1,63 @@
+.selected-players-container {
+    padding: 20px;
+}
+
+.selected-player-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    transition: box-shadow 0.3s ease;
+}
+
+.selected-player-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.player-image {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    margin-right: 15px; 
+}
+
+.player-info {
+    flex: 1; 
+}
+
+.player-name {
+    font-size: 1.2em; 
+    font-weight: bold; 
+}
+
+.player-position {
+    color: #555; 
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: #e74c3c; 
+    cursor: pointer;
+    font-size: 1.5em; 
+    transition: color 0.3s;
+}
+
+.delete-button:hover {
+    color: #c0392b; 
+}
+
+@media (max-width: 600px) {
+    .selected-player-card {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .player-info {
+        margin-top: 10px; 
+    }
+}

@@ -1,11 +1,11 @@
-// import React from 'react';
+/* eslint-disable react/prop-types */
+// Available.jsx
+import AllPlayers from '../AllPlayers/AllPlayers';
 
-import AllPlayers from "../AllPlayers/AllPlayers";
-
-const Available = () => {
+const Available = ({ handleSelectedPlayer }) => {
     return (
         <div>
-            <AllPlayers></AllPlayers>
+            <AllPlayers handleSelectedPlayer={handleSelectedPlayer} />
         </div>
     );
 };

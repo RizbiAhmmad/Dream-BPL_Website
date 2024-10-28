@@ -18,7 +18,11 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto px-6 lg:flex lg:justify-between lg:items-start mt-20">
+            <div className="flex justify-center mt-12">
+                <img src="https://i.ibb.co.com/Ln7snCj/logo-footer.png" alt="Cricket Logo" className="w-24" />
+            </div>
+
+            <div className="container mx-auto px-6 lg:flex lg:justify-between lg:items-start mt-14">
                 
                
                 <div className="mb-8 lg:mb-0">
@@ -53,11 +57,6 @@ const Footer = () => {
                     </div>
                 </div>
                 
-            </div>
-
-            
-            <div className="flex justify-center mt-12">
-                <img src="https://i.ibb.co.com/Ln7snCj/logo-footer.png" alt="Cricket Logo" className="w-24" />
             </div>
 
           

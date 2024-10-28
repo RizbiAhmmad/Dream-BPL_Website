@@ -5,14 +5,17 @@ const SinglePlayer = ({player, handleSelectedPlayer}) => {
     // console.log(player);
     // console.log(handleSelectedPlayer);
     const {image, name, country, role, battingType, biddingPrice}=player;
+    const handleClick = () => {
+        handleSelectedPlayer(player);
+    }   
 
     return (
-        <div className='card1 rounded-xl p-2'>
-            <img className='img rounded-xl' src={image} alt="" />
+        <div className='card rounded-xl p-2'>
+            <img className='h-[350px] object-cover w-full rounded-xl ' src={image} alt="" />
             <h1 className='font-bold'>{name}</h1>
             <div className='flex justify-between items-center'>
                 <h3>{country}</h3>
-                <button className='btn'>{role}</button>
+                <button className=''>{role}</button>
             </div>
             <hr />
             <h3>Rating</h3>
@@ -23,7 +26,7 @@ const SinglePlayer = ({player, handleSelectedPlayer}) => {
 
             <div className='flex justify-between items-center'>
                 <h3>Price: ${biddingPrice}</h3>
-                <button onClick={()=>handleSelectedPlayer(player)} className='btn'>Choose player</button>
+                <button onClick={(handleClick)} className='btn bg-yellow-400'>Choose player</button>
             </div>
             
 

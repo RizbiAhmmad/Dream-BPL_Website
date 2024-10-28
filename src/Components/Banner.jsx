@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 const Banner = ({ handleClaimFreeCredit }) => {
-  console.log(handleClaimFreeCredit)
+  // console.log(handleClaimFreeCredit)
 
     return (
         <div>

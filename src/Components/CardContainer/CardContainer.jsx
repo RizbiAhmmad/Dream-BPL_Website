@@ -1,25 +1,35 @@
 /* eslint-disable react/prop-types */
-// import React from 'react';
+// CardContainer.jsx
 import Available from '../Available/Available';
 import Selected from '../Selected/Selected';
-import './CardContainer.css'
+import './CardContainer.css';
 
-const CardContainer = ({handleIsActiveState, isActive ,handleSelectedPlayer}) => {
-    // console.log(handleIsActiveState);
-    // console.log(isActive);
+const CardContainer = ({ handleIsActiveState, isActive, handleSelectedPlayer, selectedPlayers, handleRemove }) => {
     return (
         <div>
-            <div className='flex justify-end'>
-                <button onClick={()=>handleIsActiveState("card")} className={`${isActive.Card? "btn active":"btn"}`}>Available</button>
-                <button onClick={()=>handleIsActiveState("selected")} className={`${isActive.Card? "btn":"btn active"}`}>Selected</button>
-               
-            </div>
+            <div className='flex justify-end mx-5'>
+    <button
+        onClick={() => handleIsActiveState("card")}
+        className={`btn1 ${isActive.Card ? "active" : ""}`} 
+    >
+        Available
+    </button>
+    <button
+        onClick={() => handleIsActiveState("selected")}
+        className={`btn1 ${!isActive.Card ? "active" : ""}`} 
+    >
+        Selected ({selectedPlayers.length})
+    </button>
+</div>
 
-           {isActive.Card? <Available handleSelectedPlayer={handleSelectedPlayer}></Available>:<Selected></Selected>}
 
-
+            {isActive.Card ? (
+                <Available handleSelectedPlayer={handleSelectedPlayer} />
+            ) : (
+                <Selected handleRemove={handleRemove} selectedPlayers={selectedPlayers} />
+            )}
         </div>
     );
 };
 
-export default CardContainer;
+export default CardContainer; 
